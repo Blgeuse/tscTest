@@ -1,18 +1,17 @@
 class User {
-  skills: string[];
+  _login: string;
+  password: string;
 
-  addSkill(skill: string): void;
-  addSkill(skills: string[]): void;
-  addSkill(skillOrSkills: string | string[]): void {
-    if (typeof skillOrSkills === 'string') {
-      this.skills.push(skillOrSkills);
-    } else {
-      this.skills = this.skills.concat(skillOrSkills);
-    }
+  set login(l: string) {
+    this._login = `user-${l}`;
+  }
+
+  get login() {
+    return this._login;
   }
 }
-function run(distance: number): void;
-function run(distance: string): void;
-function run(distance: number | string): void {
 
-}
+
+const user = new User();
+user.login = 'myLogin';
+

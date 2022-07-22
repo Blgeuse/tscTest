@@ -1,13 +1,11 @@
 "use strict";
 class User {
-    addSkill(skillOrSkills) {
-        if (typeof skillOrSkills === 'string') {
-            this.skills.push(skillOrSkills);
-        }
-        else {
-            this.skills = this.skills.concat(skillOrSkills);
-        }
+    set login(l) {
+        this._login = `user-${l}`;
+    }
+    get login() {
+        return this._login;
     }
 }
-function run(distance) {
-}
+const user = new User();
+user.login = 'myLogin';
